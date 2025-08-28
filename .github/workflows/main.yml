@@ -2,8 +2,9 @@ name: Auto Send Microsoft Teams Message
 
 on:
   schedule:
-    - cron: '19 8 * * *'  # 09:35 VN time (UTC+7)
-    #- cron: '05 8 * * *'  # 15:05 VN time (UTC+7)
+    - cron: '13 2 * * *'  # 09:35 VN time (UTC+7)
+    - cron: '43 7 * * *'  # 15:05 VN time (UTC+7)
+    - cron: '28 8 * * *'  # 15:05 VN time (UTC+7)
   workflow_dispatch:       # Cho phép chạy thủ công
 
 jobs:
@@ -26,16 +27,3 @@ jobs:
 
       - name: Run script
         run: python team_bot.py
-
-      - name: Upload screenshots
-        uses: actions/upload-artifact@v4
-        with:
-         name: screenshots
-         path: '*.png'
-      
-      - name: Upload debug HTML
-        uses: actions/upload-artifact@v4
-        with:
-          name: debug-html
-          path: '*.html'
-      
