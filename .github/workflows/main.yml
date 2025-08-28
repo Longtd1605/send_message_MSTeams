@@ -4,7 +4,7 @@ on:
   schedule:
     - cron: '13 2 * * *'  # 09:35 VN time (UTC+7)
     - cron: '43 7 * * *'  # 15:05 VN time (UTC+7)
-    - cron: '28 8 * * *'  # 15:05 VN time (UTC+7)
+    - cron: '58 8 * * *'  # 15:05 VN time (UTC+7)
   workflow_dispatch:       # Cho phép chạy thủ công
 
 jobs:
