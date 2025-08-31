@@ -1,10 +1,9 @@
 name: Auto Send Microsoft Teams Message
 
 on:
-  schedule:
-    - cron: '49 1 * * *'  # 09:45 VN time (UTC+7)
-    - cron: '53 7 * * *'  # 15:15 VN time (UTC+7)
-  workflow_dispatch:       # Cho phép chạy thủ công
+  repository_dispatch:
+    types: [run-teams-bot]
+  workflow_dispatch:
 
 jobs:
   send_message:
