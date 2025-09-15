@@ -8,10 +8,11 @@ from webdriver_manager.chrome import ChromeDriverManager
 from datetime import datetime
 import time
 import pytz
+import os
 
 # ====== Thông tin đăng nhập và cấu hình ======
-email = "tech.qtdata@gmail.com"
-password = "passnotE@1234"
+email = os.environ.get('TEAMS_EMAIL')
+password = os.environ.get('TEAMS_PASSWORD')
 message = "Thông báo: Reset 15min (Giải lao)"
 local_tz = pytz.timezone("Asia/Ho_Chi_Minh")
 
@@ -121,6 +122,4 @@ def job_wrapper():
     driver.quit()
     
 if __name__ == "__main__":
-    # now = datetime.now(local_tz)
-    # if (now.hour, now.minute) in [(9, 45), (15, 15)]:
     job_wrapper()
